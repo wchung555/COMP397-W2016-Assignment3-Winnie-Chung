@@ -7,6 +7,7 @@ Created: March 18, 2016
 Last Modified: March 28, 2016 by Winnie Chung  
 Revision History:  
 Mar. 28: initial commit  
+Mar. 28: removed irrelevant files; added more internal documentation
   
 ---
   
