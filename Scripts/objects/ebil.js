@@ -5,7 +5,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var objects;
 (function (objects) {
-    // ENEMY CLASS ++++++++++++++++++++++++++++++++++++
+    // EBIL (ENEMY) CLASS ++++++++++++++++++++++++++++++++++++
     var Ebil = (function (_super) {
         __extends(Ebil, _super);
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
@@ -16,9 +16,8 @@ var objects;
             this.name = "ebil";
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++
+        // check to see if the left of the enemy is outside the viewport
         Ebil.prototype._checkBounds = function (value) {
-            // check to see if the left of the enemy 
-            // is outside the viewport         
             if (this.x <= value || this.y >= this._bottomBounds) {
                 this._reset(this._rightBounds);
             }
@@ -31,9 +30,9 @@ var objects;
             this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
         };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
+        // scroll the enemy across the screen
         Ebil.prototype.update = function () {
             this._checkBounds(this._leftBounds);
-            // scroll the enemy down the screen
             this.y += this._speed.y;
             this.x -= this._speed.x;
         };

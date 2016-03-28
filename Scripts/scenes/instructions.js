@@ -15,10 +15,10 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
         Instructions.prototype.start = function () {
-            //Add Menu Label
+            //Add background
             this._instructionsBackground = new createjs.Bitmap(assets.getResult("InstructionsBackground"));
             this.addChild(this._instructionsBackground);
-            // add the Start button to the MENU scene
+            // add the Start button to the INSTRUCTIONS scene
             this._startButton = new objects.Button("StartButton", config.Screen.CENTER_X - 40, config.Screen.HEIGHT - 105, true);
             this.addChild(this._startButton);
             // Start Button event listener
@@ -30,9 +30,9 @@ var scenes;
         Instructions.prototype.update = function () {
         };
         //EVENT HANDLERS ++++++++++++++++++++
-        // LEFT_CAVE Button click event handler
+        // START Button click event handler
         Instructions.prototype._startButtonClick = function (event) {
-            // Switch to the LEFT_CAVE Scene
+            // Switch to the PLAY Scene
             scene = config.Scene.PLAY;
             changeScene();
         };

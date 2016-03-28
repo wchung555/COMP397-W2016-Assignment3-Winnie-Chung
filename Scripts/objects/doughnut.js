@@ -17,9 +17,8 @@ var objects;
             this.name = "doughnut";
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++
+        // check to see if the left of the doughnut is outside the viewport  
         Doughnut.prototype._checkBounds = function (value) {
-            // check to see if the left of the doughnut 
-            // is outside the viewport         
             if (this.x <= value) {
                 this._reset(this._rightBounds);
             }
@@ -30,8 +29,8 @@ var objects;
             this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
         };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
+        // scroll the doughnut 5 px per frame and reset its position if neccessary
         Doughnut.prototype.update = function () {
-            // scroll the doughnut 5 px per frame
             this.x -= this._speed.x;
             this._checkBounds(this._leftBounds);
         };

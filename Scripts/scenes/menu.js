@@ -35,7 +35,7 @@ var scenes;
         Menu.prototype.update = function () {
         };
         //EVENT HANDLERS ++++++++++++++++++++
-        // START Button click event handler
+        // INSTRUCTIONS Button click event handler
         Menu.prototype._instructionsButtonClick = function (event) {
             // Switch to the PLAY Scene
             scene = config.Scene.INSTRUCTIONS;

@@ -50,7 +50,7 @@ module scenes {
         
         
         //EVENT HANDLERS ++++++++++++++++++++
-        // START Button click event handler
+        // INSTRUCTIONS Button click event handler
         private _instructionsButtonClick(event: createjs.MouseEvent) {
             // Switch to the PLAY Scene
             scene = config.Scene.INSTRUCTIONS;

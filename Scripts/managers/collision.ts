@@ -7,10 +7,12 @@ module managers {
             this._player = player;
         }
         
+        // find the distance between two points
         public distance(startPoint:createjs.Point, endPoint:createjs.Point):number {
             return Math.sqrt(Math.pow((endPoint.x - startPoint.x),2) + Math.pow(endPoint.y - startPoint.y,2))
         }
         
+        // determine if the player's avatar collides with the specified object
         public check(object:objects.GameObject):boolean {
             var startPoint:createjs.Point = new createjs.Point();
             var endPoint:createjs.Point = new createjs.Point();
@@ -30,13 +32,13 @@ module managers {
               the other object is less than the minimum distance */
             if(this.distance(startPoint, endPoint) < minimumDistance) {
                 
-                // check if it's an island hit
+                // check if it's a doughnut hit
                 if(object.name === "doughnut") {
                     console.log("doughnut hit!");
                     createjs.Sound.play("coinSound");
                 }
                 
-                // check if it's a cloud hit
+                // check if it's an enemy hit
                 if(object.name === "ebil") {
                     console.log("enemy hit!");
                     createjs.Sound.play("stabSound");

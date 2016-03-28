@@ -12,10 +12,8 @@ module objects {
         }
 
         // PRIVATE METHODS ++++++++++++++++++++++++++++
+        // check to see if the left of the space is met the left of the scene
         protected _checkBounds(value: number): void {
-            // check to see if the left of the space 
-            // is met the left of the scene
-
             if (this.x <= value) {
                 this._reset(0);
             }
@@ -28,9 +26,9 @@ module objects {
 
 
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
+        // scroll the space 5 px per frame
         public update(): void {
             this._checkBounds(-1250); // space width - canvas width
-            // scroll the space 5 px per frame
             this.x -= this._speed.x;
         }
     }

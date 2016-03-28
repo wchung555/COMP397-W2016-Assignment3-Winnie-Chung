@@ -1,4 +1,4 @@
-// LEFT_CAVE SCENE
+// END SCENE
 module scenes {
     export class End extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
@@ -28,7 +28,7 @@ module scenes {
                 true);
             this.addChild(this._scoreLabel);
 
-            // add the START_OVER button to the PLAY scene
+            // add the RESET button to the PLAY scene
             this._restartButton = new objects.Button(
                 "RestartButton",
                 config.Screen.CENTER_X - 40,
@@ -51,9 +51,9 @@ module scenes {
 
         //EVENT HANDLERS ++++++++++++++++++++
 
-        // START_OVER Button click event handler
+        // RESET Button click event handler
         private _restartButtonClick(event: createjs.MouseEvent) {
-            // Switch to the INTRO Scene
+            // Switch to the MENU Scene
             scene = config.Scene.MENU;
             changeScene();
         }

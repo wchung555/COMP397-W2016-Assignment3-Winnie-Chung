@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-// LEFT_CAVE SCENE
+// END SCENE
 var scenes;
 (function (scenes) {
     var End = (function (_super) {
@@ -21,7 +21,7 @@ var scenes;
             // add score label
             this._scoreLabel = new objects.Label("Score: " + score, "35px Consolas", "#FFFFFF", config.Screen.CENTER_X + 20, 150, true);
             this.addChild(this._scoreLabel);
-            // add the START_OVER button to the PLAY scene
+            // add the RESET button to the PLAY scene
             this._restartButton = new objects.Button("RestartButton", config.Screen.CENTER_X - 40, config.Screen.CENTER_Y - 30, true);
             this.addChild(this._restartButton);
             // START_OVER Button event listener
@@ -33,9 +33,9 @@ var scenes;
         End.prototype.update = function () {
         };
         //EVENT HANDLERS ++++++++++++++++++++
-        // START_OVER Button click event handler
+        // RESET Button click event handler
         End.prototype._restartButtonClick = function (event) {
-            // Switch to the INTRO Scene
+            // Switch to the MENU Scene
             scene = config.Scene.MENU;
             changeScene();
         };

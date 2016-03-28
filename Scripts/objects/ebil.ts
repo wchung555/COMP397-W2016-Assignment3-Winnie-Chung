@@ -1,5 +1,5 @@
 module objects {
-    // ENEMY CLASS ++++++++++++++++++++++++++++++++++++
+    // EBIL (ENEMY) CLASS ++++++++++++++++++++++++++++++++++++
     export class Ebil extends objects.GameObject {
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
 
@@ -12,9 +12,8 @@ module objects {
         }
 
         // PRIVATE METHODS ++++++++++++++++++++++++++++
-        protected _checkBounds(value: number): void {
-            // check to see if the left of the enemy 
-            // is outside the viewport         
+        // check to see if the left of the enemy is outside the viewport
+        protected _checkBounds(value: number): void {                     
             if (this.x <= value || this.y >= this._bottomBounds) {
                 this._reset(this._rightBounds);
             }
@@ -31,9 +30,9 @@ module objects {
 
 
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
+        // scroll the enemy across the screen
         public update(): void {
             this._checkBounds(this._leftBounds);
-            // scroll the enemy down the screen
             this.y += this._speed.y;
             this.x -= this._speed.x;            
         }

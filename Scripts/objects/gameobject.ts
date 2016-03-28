@@ -31,9 +31,9 @@ module objects {
         }
 
         // PRIVATE METHODS ++++++++++++++++++++++++++++
+        // check if x value has met the reset criteria
         protected _checkBounds(value: number): void {
             var resetValue: number = 0;
-            // check if x value has met the reset criteria
             if (this.x <= value) {
                 this._reset(resetValue);
             }
@@ -45,10 +45,10 @@ module objects {
         }
 
 
-        // PUBLIC METHODS ++++++++++++++++++++++++++++++
+        // PUBLIC METHODS ++++++++++++++++++++++++++++++        
+        // scroll the game object 5 px per frame and reset its position if neccessary
         public update(): void {
             var boundValue: number = 0;
-            // scroll the ocean 5 px per frame
             this.x -= this._speed.x;
             this._checkBounds(boundValue);
         }

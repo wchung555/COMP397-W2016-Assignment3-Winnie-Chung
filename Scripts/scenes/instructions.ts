@@ -14,12 +14,11 @@ module scenes {
         
         // Start Method
         public start(): void {
-            //Add Menu Label
+            //Add background
             this._instructionsBackground = new createjs.Bitmap(assets.getResult("InstructionsBackground"));
-            this.addChild(this._instructionsBackground);
+            this.addChild(this._instructionsBackground);            
             
-            
-            // add the Start button to the MENU scene
+            // add the Start button to the INSTRUCTIONS scene
             this._startButton = new objects.Button(
                 "StartButton",
                 config.Screen.CENTER_X - 40,
@@ -42,9 +41,9 @@ module scenes {
         
         //EVENT HANDLERS ++++++++++++++++++++
         
-        // LEFT_CAVE Button click event handler
+        // START Button click event handler
         private _startButtonClick(event: createjs.MouseEvent) {
-            // Switch to the LEFT_CAVE Scene
+            // Switch to the PLAY Scene
             scene = config.Scene.PLAY;
             changeScene();
         }

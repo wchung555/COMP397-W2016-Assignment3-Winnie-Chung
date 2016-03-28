@@ -16,9 +16,8 @@ var objects;
             this._reset(0);
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++
+        // check to see if the left of the space is met the left of the scene
         Space.prototype._checkBounds = function (value) {
-            // check to see if the left of the space 
-            // is met the left of the scene
             if (this.x <= value) {
                 this._reset(0);
             }
@@ -28,9 +27,9 @@ var objects;
             this.x = value;
         };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
+        // scroll the space 5 px per frame
         Space.prototype.update = function () {
             this._checkBounds(-1250); // space width - canvas width
-            // scroll the space 5 px per frame
             this.x -= this._speed.x;
         };
         return Space;

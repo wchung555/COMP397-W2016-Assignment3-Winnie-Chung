@@ -13,9 +13,8 @@ module objects {
         }
         
         // PRIVATE METHODS ++++++++++++++++++++++++++++
-        protected _checkBounds(value:number):void {
-            // check to see if the left of the doughnut 
-            // is outside the viewport         
+        // check to see if the left of the doughnut is outside the viewport  
+        protected _checkBounds(value:number):void {                   
             if(this.x <= value) {
                 this._reset(this._rightBounds);
             }
@@ -29,8 +28,8 @@ module objects {
         
         
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
-        public update():void {
-            // scroll the doughnut 5 px per frame
+        // scroll the doughnut 5 px per frame and reset its position if neccessary
+        public update():void {            
             this.x -= this._speed.x;
             this._checkBounds(this._leftBounds);
         }

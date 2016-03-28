@@ -8,6 +8,7 @@ var objects;
     // PLAYER CLASS ++++++++++++++++++++++++++++++
     var Player = (function (_super) {
         __extends(Player, _super);
+        // CONSTRUCTOR METHOD +++++++++++++++++++++++++++++++++++
         function Player() {
             _super.call(this, assets.getResult("cat"));
             this.width = this.getBounds().width;
@@ -19,6 +20,7 @@ var objects;
             this.y = 430;
         }
         // PRIVATE METHODS
+        // prevent the player's avatar from going offscreen
         Player.prototype._checkBounds = function () {
             if (this.y < this._topBounds) {
                 this.y = this._topBounds;
@@ -28,6 +30,7 @@ var objects;
             }
         };
         // PUBLIC METHODS
+        // move the player's avatar up or down according to the mouse's movements
         Player.prototype.update = function () {
             this.y = stage.mouseY;
             this._checkBounds();

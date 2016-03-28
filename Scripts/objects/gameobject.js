@@ -22,9 +22,9 @@ var objects;
             this._rightBounds = config.Screen.WIDTH - this.width;
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++
+        // check if x value has met the reset criteria
         GameObject.prototype._checkBounds = function (value) {
             var resetValue = 0;
-            // check if x value has met the reset criteria
             if (this.x <= value) {
                 this._reset(resetValue);
             }
@@ -33,10 +33,10 @@ var objects;
         GameObject.prototype._reset = function (value) {
             this.x = value;
         };
-        // PUBLIC METHODS ++++++++++++++++++++++++++++++
+        // PUBLIC METHODS ++++++++++++++++++++++++++++++        
+        // scroll the game object 5 px per frame and reset its position if neccessary
         GameObject.prototype.update = function () {
             var boundValue = 0;
-            // scroll the ocean 5 px per frame
             this.x -= this._speed.x;
             this._checkBounds(boundValue);
         };
